@@ -73,3 +73,5 @@ Testing/
 x64/
 *.user
 
+packages/
+
