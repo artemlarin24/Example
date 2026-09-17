@@ -71,3 +71,5 @@ Testing/
 
 .vs/
 x64/
+*.user
+
