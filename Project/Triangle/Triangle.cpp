@@ -1,8 +1,10 @@
 ﻿#include "Triangle.h"
+#include <cmath>
+#include <stdexcept>
 
 Triangle::Triangle(double side, double height) {
-    _side = side;
-    _height = height;
+    set_side(side);
+    set_height(height);
 }
 
 double Triangle::calculate_S() const {
@@ -10,10 +12,16 @@ double Triangle::calculate_S() const {
 }
 
 void Triangle::set_side(double side) {
+    if (!std::isfinite(side) || side <= 0) {
+        throw std::invalid_argument("Сторона треугольника должна быть положительным конечным числом");
+    }
     _side = side;
 }
 
 void Triangle::set_height(double height) {
+    if (!std::isfinite(height) || height <= 0) {
+        throw std::invalid_argument("Высота треугольника должна быть положительным конечным числом");
+    }
     _height = height;
 }
 
