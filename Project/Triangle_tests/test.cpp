@@ -3,7 +3,7 @@
 #include <stdexcept>
 TEST(TriangleTest, CalculateArea) {
     Triangle t(10, 5);
-    double area = t.calculate_S();
+    double area = t.calculate_area();
     EXPECT_DOUBLE_EQ(area, 25.0);
 }
 TEST(TriangleTest, Getters) {
@@ -23,7 +23,7 @@ TEST(TriangleTest, AreaAfterSetters) {
     Triangle t(2, 3);
     t.set_side(10);
     t.set_height(5);
-    EXPECT_DOUBLE_EQ(t.calculate_S(), 25.0);
+    EXPECT_DOUBLE_EQ(t.calculate_area(), 25.0);
 }
 
 TEST(TriangleTest, ConstructorRejectsInvalidValues) {

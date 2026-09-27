@@ -7,28 +7,32 @@ Triangle::Triangle(double side, double height) {
     set_height(height);
 }
 
-double Triangle::calculate_S() const {
+double Triangle::calculate_area() const {
     return 0.5 * _side * _height;
 }
 
-void Triangle::set_side(double side) {
-    if (!std::isfinite(side) || side <= 0) {
-        throw std::invalid_argument("Сторона треугольника должна быть положительным конечным числом");
+void Triangle::validate(double value, const std::string& name) const {
+    if (!std::isfinite(value) || value <= 0.0) {
+        throw std::invalid_argument(
+            name + " должна быть положительным конечным числом"
+        );
     }
+}
+
+void Triangle::set_side(double side) {
+    validate(side, "Сторона треугольника");
     _side = side;
 }
 
 void Triangle::set_height(double height) {
-    if (!std::isfinite(height) || height <= 0) {
-        throw std::invalid_argument("Высота треугольника должна быть положительным конечным числом");
-    }
+    validate(height, "Высота треугольника");
     _height = height;
 }
 
-double Triangle::get_side() const {
+double Triangle::get_side() const noexcept {
     return _side;
 }
 
-double Triangle::get_height() const {
+double Triangle::get_height() const noexcept {
     return _height;
 }

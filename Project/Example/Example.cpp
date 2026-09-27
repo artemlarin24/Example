@@ -12,9 +12,9 @@ int main() {
     }
 
     try {
-        Triangle T(side, height);
-        double S = T.calculate_S();
-        std::cout << S << std::endl;
+        Triangle Triangle(side, height);
+        double area = Triangle.calculate_area();
+        std::cout << "Area = " << area << std::endl;
     }
     catch (const std::invalid_argument& error) {
         std::cerr << "Error: " << error.what() << std::endl;
