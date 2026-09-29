@@ -11,7 +11,7 @@ double Triangle::calculate_area() const {
     return 0.5 * _side * _height;
 }
 
-void Triangle::validate(double value, const std::string& name) const {
+void Triangle::validate(double value, const std::string& name)  {
     if (!std::isfinite(value) || value <= 0.0) {
         throw std::invalid_argument(
             name + " должна быть положительным конечным числом"

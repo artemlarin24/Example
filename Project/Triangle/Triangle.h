@@ -4,7 +4,7 @@
 class Triangle {
     double _side;
     double _height;
-
+    static void validate(double value, const std::string& name);
 public:
     Triangle(double side, double height);
 
@@ -15,6 +15,4 @@ public:
 
     double get_side() const noexcept;
     double get_height() const noexcept;
-
-    void validate(double value, const std::string& name) const;
 };
